@@ -1,4 +1,4 @@
-﻿DROP TABLE IF EXISTS `wjoy_log`;
+DROP TABLE IF EXISTS `wjoy_log`;
 CREATE TABLE `wjoy_log` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` varchar(10) DEFAULT NULL,

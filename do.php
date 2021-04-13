@@ -3,9 +3,10 @@
 @name:Myurl Demo
 @description:Myurl跳转文件
 @author:墨渊 
-@version:1.2
-@time:2017-11-14
-@copyright:优启梦&墨渊
+@editor:TNTcraftHIM
+@version:1.4
+@time:2021-4-13
+@copyright:优启梦&墨渊 TNTcraftHIM
 */
 include './includes/api.inc.php';
 $uid=htmlspecialchars($_GET['uid']);
@@ -19,8 +20,19 @@ if(!$myrow){
 	@header("status: 404 not found"); 
 	echo 'echo 404'; 
 	exit(); 
-	
 }else{
+	if (CHECK_MODE == 2) {
+		$param = http_build_query(array(
+			'token'		=>		CHECK_TOKEN
+			,'domain'	=>		$longurl
+		));
+		$result = get_curl('http://check.uomg.com/api/urlsec/'.CHECK_TYPE, $param);
+		$arr = json_decode($result,true);
+		if ($arr['code'] == 201) {
+			exit('<center>该域名涉嫌违规，已拦截处理！！！</center>');
+		}
+
+	}
 	$t_url=$myrow['longurl'];
 	if ($t_url == base64_encode(base64_decode($t_url))) {
         $t_url =  base64_decode($t_url);

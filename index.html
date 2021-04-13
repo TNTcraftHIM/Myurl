@@ -3,11 +3,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 	<meta name="generator" content="Myurl" />
-	<title>短网址生成 - Myurl</title>
-    <meta name="keywords" content="缩短网址,网址压缩,网址缩短,短网址,短域名,短地址,短URL,免费缩短网址,短链接生成器,短网址生成,免费缩址,域名伪装,域名转向,网站推广,短链接,长网址变短网址">
-	<meta name="description" content="免费专业的网址缩短服务,在线生成短网址,开放API接口,可批量生成短链接,不限制接口请求数,跳转快,稳定可靠,防屏蔽,防拦截!">
-	<link rel="Shortcut Icon" href="https://www.le.com/favicon.ico">
-	<link rel="stylesheet" href="https://css.letvcdn.com/lc04_yinyue/201612/19/20/00/bootstrap.min.css">
+	<title>Myurl-短网址生成</title>
+    <meta name="keywords" content="Myurl,Myurl链接,Myurl 短链接,缩短,Myurl短网址,Myurl网址缩短,Myurl短网址生成,缩短网址,网址压缩,网址缩短,短网址,短域名,短地址,短URL,免费缩短网址,短链接生成器,短网址生成,免费缩址,域名伪装,域名转向,网站推广,短链接,长网址变短网址">
+	<meta name="description" content="免费的网址缩短服务，在线生成短网址，提供api，跳转快，网址不失效，稳定可靠">
+	<link rel="Shortcut Icon" href="statics/favicon.ico">
+	<link rel="stylesheet" href="statics/bootstrap.min.css">
 	<style type="text/css"></style>
 	<style type="text/css">
 		*{margin:0;padding:0}
@@ -32,7 +32,6 @@
 </head>
 
 <body>
-
 	<div id="app" class="container">
 		<div class="alert top top-xs alert-dismissible alert-danger expand-transition" style="display:none" id="error-tips">
 
@@ -40,27 +39,30 @@
 		<div class="row row-xs">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
 				<div class="page-header">
-					<h3 class="text-center h3-xs">短网址生成工具</h3>
+				    <p style="text-align: center;"><img src="statics/icon.png" height="84" width="90" alt="icon" ondragstart="return false;" oncontextmenu="return false;" /></p>
+					<h3 class="text-center h3-xs" onselectstart="return false;">Myurl 短网址生成</h3>
 				</div>
 				<div class="form-group " id="input-wrap"> 
-					<label class="control-label" for="inputContent">请输入长网址:</label> 
-					<input type="text" id="inputContent" class="form-control" placeholder="请输入地址..."> 
+					<label class="control-label" for="inputContent">请输入原网址：</label> 
+					<input type="text" id="inputContent" class="form-control" placeholder="在此输入..." onkeypress="if(event.keyCode==13) {Entered()}">
+					<label style="text-align: left; white-space:nowrap" class="control-label" id="infoLab" for="inputContent">点击按钮或回车以生成短链</label> 
 				</div>
 				<div class="text-right">
-					<div class="input_group_addon btn btn-primary" id="shortify" onclick="checkUrl(document.getElementById('inputContent').value)">缩短网址</div>
+					<div class="input_group_addon btn btn-primary" id="shortify" onclick="checkUrl(document.getElementById('inputContent').value)">生成</div>
 				</div>
 			</div>
 			<div class="modal expand-transition" id="result-wrap" style="display:none">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header"> <button type="button" class="close" data-dismiss="modal" onclick="closeWrapper()" aria-hidden="true">×</button>
-							<h4 class="modal-title">生成成功！</h4>
+							<h4 class="modal-title">生成成功！短网址为：</h4>
 						</div>
 						<div class="modal-body">
-							<div class="form-group"> <input type="text" class="form-control" id="gen_result_url" value="http://www.aeink.com"> </div>
+							<div class="form-group"> <input title="单击复制" onclick="CopyUrl()" type="text" class="form-control" id="gen_result_url" value="https://example.com;readonly;" readonly> </div>
+							<label style="white-space:nowrap" class="control-label" id="CopyAlert">点击链接即可复制</label> 
 						</div>
 						<div class="modal-footer">
-							<a target="_blank" id="preViewBtn" href="http://www.aeink.com"> <button type="button" class="btn btn-success">点击预览</button> </a>
+							<a target="_blank" id="preViewBtn" href="https://example.com"> <button type="button" class="btn btn-success">跳转</button> </a>
 						</div>
 					</div>
 				</div>
@@ -70,13 +72,8 @@
 
 	<div class="footer" style="color:#888;">
 
-	        <p>
-	        	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258943594'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1258943594' type='text/javascript'%3E%3C/script%3E"));</script> 
-	        	| <a href="http://www.aeink.com/myurl.html">源码下载</a>
-	        	| <a href="http://tools.aeink.com/tools/qian">赞助本站</a>
-	        </p>
-	        声明：本站永久免费，短网址均由用户生成，所跳转网站均与本站无关，亦不承担法律责任!<br>
-			© Copyright 2015-2017 <a href="http://www.aeink.com/myurl.html">优启梦</a> - All Rights Reserved. 
+	        声明：短网址均由用户生成，跳转内容不代表本站立场<br>
+			Copyright © 2021 <a href="#">Myurl</a> - All Rights Reserved. 
 
 	</div>
 
@@ -85,8 +82,11 @@
 			var xhr = new XMLHttpRequest();
 			xhr.onreadystatechange = function () {
 				if (xhr.readyState === 4) {
-
 					if(xhr.status===200){
+						if (xhr.responseText.indexOf("(1045)") > -1) {
+							console.log(xhr.responseText.indexOf("(1045)"));
+							msgAlert('您还没有配置数据库文件吧！');
+						}
 						var result = JSON.parse(xhr.responseText);
 						if (result.result == 1) {
 							var resultWrap = document.getElementById('result-wrap');
@@ -96,19 +96,18 @@
 							preViewBtn.setAttribute('href', location.protocol+'//'+location.host+'/' + result.code);
 							genResultUrl.value = location.protocol+'//'+location.host+'/' + result.code
 						} else {
-							msgAlert('返回错误')
+							msgAlert(result.msg);
 						}
 					}else{
-							msgAlert('返回错误')
+							msgAlert('返回错误');
 					}	
 				}
 			};
 			var urlVal = document.getElementById('inputContent').value;
-			var urlParam = hasHttp?urlVal:location.protocol+'//'+urlVal;
-			xhr.open('GET', location.protocol+'//'+location.host + '/Myurl/api.php?url=' + encodeURIComponent(urlParam));
+			var urlParam = hasHttp?urlVal:'http://'+urlVal;
+			xhr.open('GET', location.protocol+'//'+location.host + '/api.php?url=' + encodeURIComponent(urlParam));
 			xhr.send();
 		}
-
 		function msgAlert(txt,input) {
 			var tips = document.getElementById('error-tips');
 			tips.style.display = "block";
@@ -120,19 +119,34 @@
 		}
 		function closeWrapper(){
 			document.getElementById('result-wrap').style.display='none'
+			document.getElementById('infoLab').innerText = "点击按钮或回车以生成短链";
 		}
 		function checkUrl(text) {
 			var hasHttp = /^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(text),
 				notHasHttp = /^\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(text);
 			if (!hasHttp&&!notHasHttp) {
-				msgAlert('输入的url有误，请重新输入!',true);
+				msgAlert('输入的网址有误，请重新输入',true);
 			} else {
 				document.getElementById('input-wrap').classList.remove('has-error')
 				sendAJAX(hasHttp);
+				document.getElementById('infoLab').innerText = "已申请生成";
 			}
 		}
+		function CopyUrl() {
+		    var e=document.getElementById("gen_result_url");
+		    var a=document.getElementById("CopyAlert");
+		    e.select();
+		    document.execCommand("Copy");
+		    a.innerText="复制成功！";
+		    setTimeout(function () {
+				a.innerText="点击链接即可复制";
+			}, 3000)
+		}
+        function Entered()
+        {
+            document.getElementById("shortify").click();
+            }
 	</script>
-
 </body>
 
 </html>
