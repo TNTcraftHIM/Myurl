@@ -11,6 +11,8 @@ Myurl 基于php+mysql实现的网址缩短服务，程序主要靠api.php 生成
 前台使用的乐视短网址的模板，内容已经本地化，看起来很简单
 
 原作者的发布页面：http://www.aeink.com/myurl.html
+
+在线真实网站演示：https://dlj.li
 ## 安装说明
 1. 将程序上传至网站根目录，
 
